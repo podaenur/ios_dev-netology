@@ -35,3 +35,19 @@ let value3 = Speaker.Params.sex(.boy)
 let value4 = Speaker.Params.name("Boris")
 let value5 = value1.details
 
+
+//*** Структуры - Structs ***
+//https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html
+
+struct Somebody {
+    
+    let name: String
+    var age: Int
+    
+    mutating func set(name: String) {
+        self = Somebody(name: name, age: self.age)
+    }
+}
+
+var value6 = Somebody(name: "Vladimir", age: 73)
+value6.set(name: "Igor")
