@@ -51,3 +51,34 @@ struct Somebody {
 
 var value6 = Somebody(name: "Vladimir", age: 73)
 value6.set(name: "Igor")
+
+
+//*** Опциональные типы - Optionals ***
+//https://developer.apple.com/documentation/swift/optional
+
+let value7: Int? = 5
+var value8: Int?
+var value9: String?
+
+let isEqual = value7 == value8
+value9
+
+struct FirstChain {
+    let value: SecondChain?
+}
+
+struct SecondChain {
+    let value: ThirdChain?
+}
+
+struct ThirdChain {
+    let name: String?
+}
+
+let value10 = FirstChain(value: SecondChain(value: ThirdChain(name: "Kirill")))
+value10.value?.value?.name
+
+let value11 = FirstChain(value: nil)
+value11.value?.value?.name
+
+//***
