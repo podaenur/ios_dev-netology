@@ -1,7 +1,5 @@
 import UIKit
 
-var str = "Hello world"
-
 //*** Перечисления - Enums ***
 //https://docs.swift.org/swift-book/LanguageGuide/Enumerations.html
 
@@ -29,11 +27,11 @@ enum Speaker {
     }
 }
 
-let value1 = Speaker.freelancer
-let value2 = Speaker.SexType.girl
-let value3 = Speaker.Params.sex(.boy)
-let value4 = Speaker.Params.name("Boris")
-let value5 = value1.details
+let value1 = Speaker.freelancer             // тип let value1: Speaker          // значение: freelancer
+let value2 = Speaker.SexType.girl           // тип let value2: Speaker.SexType  // значение: girl
+let value3 = Speaker.Params.sex(.boy)       // тип let value3: Speaker.Params   // значение: sex с ассоциативным значением (Speaker.SexType.boy)
+let value4 = Speaker.Params.name("Boris")   // тип let value4: Speaker.Params   // значение: name с ассоциативным значением ("Boris")
+let value5 = value1.details                 // тип let value5: String           // значение: "This is `freelancer`"
 
 
 //*** Структуры - Structs ***
@@ -49,19 +47,19 @@ struct Somebody {
     }
 }
 
-var value6 = Somebody(name: "Vladimir", age: 73)
-value6.set(name: "Igor")
+var value6 = Somebody(name: "Vladimir", age: 73)    // значние: value6 = name: "Vladimir", age: 73
+value6.set(name: "Igor")                            // значние: value6 = name: "Igor", age: 73
 
 
 //*** Опциональные типы - Optionals ***
 //https://developer.apple.com/documentation/swift/optional
 
-let value7: Int? = 5
-var value8: Int?
-var value9: String?
+let value7: Int? = 5        // value7 = 5
+var value8: Int?            // value8 = nil
+var value9: String?         // value9 = nil
 
-let isEqual = value7 == value8
-value9
+let isEqual = value7 == value8  // isEqual = false
+value9                          // значение: nil
 
 struct FirstChain {
     let value: SecondChain?
@@ -75,10 +73,10 @@ struct ThirdChain {
     let name: String?
 }
 
-let value10 = FirstChain(value: SecondChain(value: ThirdChain(name: "Kirill")))
-value10.value?.value?.name
+let value10 = FirstChain(value: SecondChain(value: ThirdChain(name: "Kirill")))     // тип: let value10: FirstChain
+value10.value?.value?.name                                                          // значение: "Kirill"
 
-let value11 = FirstChain(value: nil)
-value11.value?.value?.name
+let value11 = FirstChain(value: nil)        // тип: let value11: FirstChain
+value11.value?.value?.name                  // значение nil
 
 //***
