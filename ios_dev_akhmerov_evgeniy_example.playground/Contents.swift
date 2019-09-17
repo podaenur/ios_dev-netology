@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 //*** Перечисления - Enums ***
 //https://docs.swift.org/swift-book/LanguageGuide/Enumerations.html
